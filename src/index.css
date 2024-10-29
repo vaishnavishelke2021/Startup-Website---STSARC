@@ -32,3 +32,16 @@ body {
   padding-bottom: 3px;
   border-bottom: 2px solid #f96a50;
 }
+
+
+/* Loading screen styles */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000; /* Change this color if needed */
+  color: #fff; /* Text color */
+  z-index: 50; /* Ensure it overlays everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
