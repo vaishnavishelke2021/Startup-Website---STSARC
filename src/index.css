@@ -16,6 +16,11 @@ body {
   font-family: "Archivo", sans-serif;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+[data-scroll-container] {
+  overflow: hidden; /* Prevent scrollbar for Locomotive Scroll */
 }
 
 .raleway {
