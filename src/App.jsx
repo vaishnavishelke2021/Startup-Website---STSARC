@@ -15,36 +15,39 @@ const App = () => {
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
-    // Initialize Locomotive Scroll
-    const locomotiveScroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.1,
-    });
+    // Initialize Locomotive Scroll after loading has finished
+    if (!loading) {
+      const locomotiveScroll = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+        lerp: 0.1,
+      });
 
-    // Save the instance in state
-    setScroll(locomotiveScroll);
+      // Save the instance in state
+      setScroll(locomotiveScroll);
 
-    // Clean up Locomotive Scroll instance on component unmount
-    return () => {
-      if (locomotiveScroll) locomotiveScroll.destroy();
-    };
-  }, []);
+      // Clean up Locomotive Scroll instance on component unmount
+      return () => {
+        if (locomotiveScroll) locomotiveScroll.destroy();
+      };
+    }
+  }, [loading]); // Run effect when loading changes
 
   useEffect(() => {
-    // Set a timeout for 5 seconds before removing the loading screen
+    // Set a timeout for 2.5 seconds before starting to fade out the loading screen
     const timeout = setTimeout(() => {
-      // Transition the loading screen out and show the main content
+      // Use GSAP to fade out the loading screen
       gsap.to(".loading-screen", {
-        y: "50%", // Slide the loading screen down
+        y: "20%", // Slide out of view if needed
         opacity: 0, // Fade out the loading screen
-        duration: 1,
+        duration: 1.4,
         ease: "power4.inOut",
         onComplete: () => {
+          // Only set loading to false after the fade-out animation is complete
           setLoading(false);
         },
       });
-    }, 2000);
+    }, 2500);
 
     // Clean up the timeout when the component unmounts
     return () => clearTimeout(timeout);
