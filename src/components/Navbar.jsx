@@ -44,7 +44,7 @@ const Navbar = ({ scroll }) => {
   }, []);
 
   return (
-    <div className="bg-white shadow-sm px-14 py-5 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+    <div className="bg-white/10 backdrop-blur drop-shadow-sm bg-blur px-14 py-5 flex justify-between items-center fixed top-0 left-0 w-full z-50">
       <div>
         <h1 className="text-3xl font-bold text-primary">stsarc</h1>
       </div>
@@ -53,7 +53,11 @@ const Navbar = ({ scroll }) => {
           <motion.a
             key={link}
             onClick={() => handleLinkClick(link)}
-            className={activeLink === link ? "active cursor-pointer" : "pb-1 cursor-pointer"}
+            className={
+              activeLink === link
+                ? "active cursor-pointer"
+                : "pb-1 cursor-pointer"
+            }
             onMouseEnter={{ scale: 1.03 }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
