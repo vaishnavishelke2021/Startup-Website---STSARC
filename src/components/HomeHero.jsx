@@ -93,7 +93,7 @@ const HomeHero = () => {
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
         <motion.h1
-          className="text-3xl md:text-[45px] raleway font-extrabold text-orange-500 mb-9"
+          className="text-3xl md:text-[45px] raleway font-extrabold text-orange-500 mb-9 hoverable"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}

@@ -8,6 +8,7 @@ import Loading from "./components/Loading"; // Import the Loading component
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import gsap from "gsap";
+import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
   const scrollRef = useRef(null);
@@ -54,7 +55,8 @@ const App = () => {
   }, []);
 
   return (
-    <div ref={scrollRef} data-scroll-container>
+    <div ref={scrollRef} data-scroll-container className="cursor-none">
+      <CustomCursor/>
       {loading && <Loading />} {/* Show loading screen while loading is true */}
       {!loading && (
         <>
