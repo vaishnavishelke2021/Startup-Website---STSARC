@@ -34,4 +34,19 @@ body {
 }
 
 
-/* hero  */
+/* about  section */
+/* CSS file for moving gradient background */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient-bg {
+  background: linear-gradient(45deg, #b74f04, #ef9534, #fb923c);
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s ease infinite;
+}
+

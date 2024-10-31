@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div id="home" className="min-h-screen">
       {/* Home */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-20">
         <HomeHero />
       </div>
       <MarqueeCards/>
